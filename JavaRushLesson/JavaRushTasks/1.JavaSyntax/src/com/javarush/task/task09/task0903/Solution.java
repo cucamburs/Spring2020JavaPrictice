@@ -1,0 +1,41 @@
+package com.javarush.task.task09.task0903;
+
+/* 
+Кто меня вызывал?
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        method1();
+       // System.out.println(method1());
+    }
+
+    public static int method1() {
+        method2();
+       // System.out.println(method2());
+        return Thread.currentThread().getStackTrace()[2].getLineNumber();
+    }
+
+    public static int method2() {
+        //System.out.println(method3());
+         method3();
+        return Thread.currentThread().getStackTrace()[2].getLineNumber();
+    }
+
+    public static int method3() {
+        //System.out.println(method4());
+        method4();
+        return Thread.currentThread().getStackTrace()[2].getLineNumber();
+    }
+
+    public static int method4() {
+        //System.out.println(method5());
+        method5();
+        return Thread.currentThread().getStackTrace()[2].getLineNumber();
+    }
+
+    public static int method5() {
+      //  System.out.println(Thread.currentThread().getStackTrace()[2].getLineNumber());
+        return Thread.currentThread().getStackTrace()[2].getLineNumber();
+    }
+}
